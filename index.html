@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Display Value from Python</title>
+  </head>
+  <body>
+    <h1>Value from Python:</h1>
+    <p id="value"></p>
+
+    <script>
+      fetch("http://localhost:8000")
+        .then((response) => response.text())
+        .then((data) => {
+          document.getElementById("value").textContent = data;
+        })
+        .catch((error) => console.error("Error:", error));
+    </script>
+  </body>
+</html>
